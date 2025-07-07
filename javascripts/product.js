@@ -113,3 +113,93 @@ featureItems.forEach((item, index) => {
         item.style.transitionDelay = `${index * 0.1}s`;
     });
 });
+
+// Popup Form Functionality
+const inquiryBtn = document.getElementById('inquiryBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const formPopup = document.getElementById('formPopup');
+const closeFormBtn = document.getElementById('closeFormBtn');
+const contactForm = document.getElementById('contactForm');
+
+// Open popup when inquiry button is clicked
+inquiryBtn.addEventListener('click', () => {
+    formPopup.style.display = 'flex';
+    // Allow scrolling on the popup content instead of preventing body scroll
+    
+    // Set form purpose as inquiry
+    const formTitle = document.querySelector('.popup-title');
+    formTitle.textContent = 'Product Inquiry';
+    
+    // Add animation
+    formPopup.classList.add('active');
+});
+
+// Open popup when download button is clicked
+downloadBtn.addEventListener('click', () => {
+    formPopup.style.display = 'flex';
+    // Allow scrolling on the popup content instead of preventing body scroll
+    
+    // Set form purpose as download
+    const formTitle = document.querySelector('.popup-title');
+    formTitle.textContent = 'Download Product Details';
+    
+    // Add animation
+    formPopup.classList.add('active');
+});
+
+// Close popup when close button is clicked
+closeFormBtn.addEventListener('click', () => {
+    closePopup();
+});
+
+// Close popup when clicking outside the form
+formPopup.addEventListener('click', (e) => {
+    if (e.target === formPopup) {
+        closePopup();
+    }
+});
+
+// Close popup when Escape key is pressed
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && formPopup.style.display === 'flex') {
+        closePopup();
+    }
+});
+
+// Handle form submission
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    
+    // Here you would typically send the form data to a server
+    console.log('Form submitted:', { name, email, phone, message });
+    
+    // Show success message
+    const formContent = document.querySelector('.popup-content');
+    formContent.innerHTML = `
+        <h2 class="popup-title" style="color: #effe8b;">Thank You!</h2>
+        <p style="color: #ffffff; text-align: center; margin-bottom: 20px;">Your message has been submitted successfully.</p>
+        <button class="submit-btn" id="closeSuccessBtn">Close</button>
+    `;
+    
+    // Add event listener to close button
+    document.getElementById('closeSuccessBtn').addEventListener('click', closePopup);
+});
+
+// Function to close the popup
+function closePopup() {
+    formPopup.style.display = 'none';
+    // No need to re-enable body scroll since we're not disabling it
+    
+    // Reset form after a delay
+    setTimeout(() => {
+        if (contactForm) {
+            contactForm.reset();
+        }
+    }, 300);
+}

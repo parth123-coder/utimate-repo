@@ -906,3 +906,122 @@ body {
         max-width: 200px;
     }
 }
+
+/* Popup Form Styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #effe8b;
+    animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 20px auto;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.popup-title {
+    color: #effe8b;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #effe8b;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    background-color: #374151;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #effe8b;
+    box-shadow: 0 0 0 2px rgba(239, 254, 139, 0.3);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #effe8b 0%, #f0ff9e 100%);
+    color: #1f2937;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(239, 254, 139, 0.3);
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 20px;
+    }
+    
+    .popup-title {
+        font-size: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

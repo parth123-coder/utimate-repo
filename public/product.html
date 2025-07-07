@@ -141,9 +141,33 @@
                 
             </div>
 
+  <!-- Hero Buttons -->
   <div class="hero-buttons">
-    <button class="hero-button primary">inquiry</button>
-    <button class="hero-button secondary">download</button>
+    <button class="hero-button primary" id="inquiryBtn">inquiry</button>
+    <button class="hero-button secondary" id="downloadBtn">download</button>
+</div>
+
+<!-- Popup Form -->
+<div class="popup-overlay" id="formPopup">
+    <div class="popup-content">
+        <button class="close-btn" id="closeFormBtn">&times;</button>
+        <h2 class="popup-title">Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Company Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Description" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
 </div>
         </div>
     </div>
