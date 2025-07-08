@@ -33,21 +33,39 @@
         <div class="logo">Y.Turner</div>
         
         <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
 
         <div class="nav-menu">
-            <a href="https://service-repo.vercel.app/" class="nav-link">Services</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="./services.html" class="nav-link">Services</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle">Products</a>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="product-page.html" class="dropdown-item nested-toggle">warping Machines</a>
+                        <div class="nested-dropdown-content">
+                            <a href="product.html" class="dropdown-item">Model RI 107 S</a>
+                            <a href="#" class="dropdown-item">Printing Machine</a>
+                            <a href="#" class="dropdown-item">Finishing Machine</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://about-us-page-prod.vercel.app/about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+            <a href="./quality.html" class="nav-link">quality</a>  
         </div>
 
         <div class="mobile-menu" id="mobileMenu">
-            <a href="https://service-repo.vercel.app/" class="mobile-link">Services</a>
-            <a href="#about" class="mobile-link">About</a>
-            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="./services.html" class="mobile-link">Services</a>
+            <a href="product-page.html" class="mobile-link">Warping Machines</a>
+            <a href="https://about-us-page-prod.vercel.app/about.html" class="mobile-link">About</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+            <a href="infrastructure.html" class="mobile-link">Infrastructure</a>
+            <a href="./quality.html" class="mobile-link">Quality</a>
         </div>
     </nav>
 </header>

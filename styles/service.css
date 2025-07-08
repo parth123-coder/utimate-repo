@@ -237,6 +237,117 @@ body {
     transform: translateY(-10px) scale(1.1);
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-top: 4px solid white;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+.dropdown-item:hover {
+    background: rgba(239, 254, 139, 0.1);
+    color: #effe8b;
+    transform: translateX(5px);
+}
+
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-toggle {
+    position: relative;
+}
+
+.nested-toggle::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid white;
+    transition: transform 0.3s ease;
+}
+
+.nested-dropdown:hover .nested-toggle::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.nested-dropdown-content {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nested-dropdown:hover .nested-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
 /* Responsive Design for Navbar */
 @media (max-width: 768px) {
     .hamburger {
@@ -245,6 +356,24 @@ body {
 
     .nav-menu {
         display: none;
+    }
+    
+    .mobile-menu {
+        padding-top: 80px;
+    }
+    
+    .dropdown .dropdown-toggle::after {
+        display: none;
+    }
+    
+    .dropdown-content,
+    .nested-dropdown-content {
+        display: none;
+    }
+    
+    .dropdown,
+    .nested-dropdown {
+        width: 100%;
     }
 }
 

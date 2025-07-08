@@ -21,11 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 document.body.style.overflow = '';
             }
+            
+            // Debug
+            console.log('Mobile menu toggled. Active:', mobileMenu.classList.contains('active'));
         });
 
         // Close mobile menu when clicking on links
         const mobileLinks = document.querySelectorAll('.mobile-link');
-        mobileLinks.forEach(link => {
+        mobileLinks.forEach((link, index) => {
+            // Add animation delay based on index
+            link.style.animationDelay = `${0.1 * (index + 1)}s`;
+            
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
                 hamburger.classList.remove('active');
